@@ -5,7 +5,7 @@
 # Description: 显示一些系统信息
 
 check_root(){
-	[[ $EUID -ne 0 ]] && echo -e "${RED}请使用 root 用户运行本脚本！${PLAIN}" && exit 1
+	[[ $EUID -ne 0 ]] && echo -e "请使用 root 用户运行本脚本！" && exit 1
 }
 
 pre_info() {
