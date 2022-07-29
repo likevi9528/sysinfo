@@ -23,7 +23,7 @@ pre_info() {
     done
 }
 install_info() {
-    [[ ${selection_1} == 4 ]] && exit 1
+    pre_info;
     if [[ ${selection_1} == 1 ]]; then
         if [ ! -e '/etc/motd.bak' ]; then
             mv /etc/motd /etc/motd.bak  > /dev/null 2>&1
@@ -43,9 +43,9 @@ install_info() {
         rm -f /usr/bin/sysinfo > /dev/null 2>&1
         echo -ne "删除成功"
     fi
+    [[ ${selection_1} == 4 ]] && exit 1
     source /etc/profile > /dev/null 2>&1
         
 }
 check_root;
-pre_info;
 install_info;
