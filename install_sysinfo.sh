@@ -24,18 +24,18 @@ pre_info() {
 }
 install_info() {
     pre_info;
-    [[ ${selection} == 4 ]] && exit 1
+    [[ ${selection_1} == 4 ]] && exit 1
     if [[ ${selection_1} == 1 ]]; then
         if [ ! -e '/etc/motd.bak' ]; then
             mv /etc/motd /etc/motd.bak  > /dev/null 2>&1
         fi
         rm /etc/motd > /dev/null 2>&1
-        curl -o /etc/motd https://ghproxy.com/https://github.com/zhai0122/sysinfo/raw/main/sysinfo.sh > /dev/null 2>&1
+        curl -o /etc/motd https://ghproxy.com/https://raw.githubusercontent.com/zhai0122/sysinfo/main/sysinfo.sh > /dev/null 2>&1
         chmod +x /etc/motd > /dev/null 2>&1
         echo -ne "安装到ssh_motd成功"
     fi
     if [[ ${selection_1} == 2 ]]; then
-        curl -o /usr/bin/sysinfo https://ghproxy.com/https://github.com/zhai0122/sysinfo/raw/main/sysinfo.sh > /dev/null 2>&1
+        curl -o /usr/bin/sysinfo https://ghproxy.com/https://raw.githubusercontent.com/zhai0122/sysinfo/main/sysinfo.sh > /dev/null 2>&1
         chmod +x /usr/bin/sysinfo > /dev/null 2>&1
         echo -ne "安装到环境变量成功"
     fi
