@@ -10,6 +10,7 @@ check_system() {
     fi
 }
 main() {
+    check_system;
     uptime | awk '{printf("\nSystem load: %.2f\t", $(NF-2))} NR==1{printf("Up: %s %s\t",$3,$4)} NR==1{printf("Users logged in: %s\n",$(NF-6))}'
     free -m | awk 'NR==2{printf("Memory usage: %s/%sMB %.2f%%\t", $3,$2,$3*100/$2)} NR==3{printf("Swap usage: %s/%sMB %.2f%%\n",$3,$2,$3*100/$2)}'
     df -h | awk '$NF=="/"{printf "Usage of /: %.1f/%.1fGB %s\t", $3,$2,$5}' ; ps -aux | wc -l | awk '{printf("Processes: %d\n", $1)}'
