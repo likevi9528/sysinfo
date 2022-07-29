@@ -23,6 +23,7 @@ pre_info() {
     done
 }
 install_info() {
+    check_root;
     pre_info;
     [[ ${selection_1} == 4 ]] && exit 1
     if [[ ${selection_1} == 1 ]]; then
