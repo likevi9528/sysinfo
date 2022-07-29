@@ -29,8 +29,9 @@ install_info() {
             mv /etc/motd /etc/motd.bak  > /dev/null 2>&1
         fi
         rm /etc/motd > /dev/null 2>&1
-        curl -o /etc/motd https://ghproxy.com/https://raw.githubusercontent.com/zhai0122/sysinfo/main/sysinfo.sh > /dev/null 2>&1
-        chmod +x /etc/motd > /dev/null 2>&1
+        mkdir -p /etc/update-motd.d > /dev/null 2>&1
+        curl -o /etc/update-motd.d/sys.info https://ghproxy.com/https://raw.githubusercontent.com/zhai0122/sysinfo/main/sysinfo.sh > /dev/null 2>&1
+        chmod +x /etc/update-motd.d/sys.info > /dev/null 2>&1
         echo -ne "安装到ssh_motd成功"
     fi
     if [[ ${selection} == 2 ]]; then
