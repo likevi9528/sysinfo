@@ -32,17 +32,17 @@ install_info() {
         mkdir -p /etc/update-motd.d > /dev/null 2>&1
         curl -o /etc/update-motd.d/sys-info https://ghproxy.com/https://raw.githubusercontent.com/zhai0122/sysinfo/main/sysinfo.sh > /dev/null 2>&1
         chmod +x /etc/update-motd.d/sys-info > /dev/null 2>&1
-        echo -ne "安装到ssh_motd成功"
+        echo -ne "安装到ssh_motd成功\n"
     fi
     if [[ ${selection} == 2 ]]; then
         curl -o /usr/bin/sysinfo https://ghproxy.com/https://raw.githubusercontent.com/zhai0122/sysinfo/main/sysinfo.sh > /dev/null 2>&1
         chmod +x /usr/bin/sysinfo > /dev/null 2>&1
-        echo -ne "安装到环境变量成功"
+        echo -ne "安装到环境变量成功\n"
     fi
     if [[ ${selection} == 3 ]]; then
         mv /etc/motd.bak /etc/motd  > /dev/null 2>&1
         rm -f /usr/bin/sysinfo > /dev/null 2>&1
-        echo -ne "删除成功"
+        echo -ne "删除成功\n"
     fi
     [[ ${selection} == 4 ]] && exit 1
     source /etc/profile > /dev/null 2>&1
