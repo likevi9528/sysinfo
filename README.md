@@ -1,2 +1,2 @@
 # sysinfo
-System info of Linux
+System info for Linux
