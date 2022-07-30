@@ -15,3 +15,6 @@ bash <(curl -Lso- https://u.shyi.io/sys)
 bash <(curl -Lso- https://u.shyi.io/sysinstall)
 ```
 如果选择环境变量安装，则请使用`sysinfo`关键字
+
+Ubuntu 16 ，Debian 10 测试通过
+Centos可以安装到环境变量使用
